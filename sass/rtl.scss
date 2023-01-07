@@ -1,0 +1,46 @@
+@use  './component/components' as *;
+@use  './component/grid' as *;
+@use  './healper/mixin' as *;
+@use  './healper/variable' as *;
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+header{
+    .container{
+        .left-side{
+            .lang{
+                i{
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+.heading-list{
+    &::before{
+            right: 0;
+            left: unset;
+    }
+}
+%shard-dott{
+    .dote{
+        span{
+            &:not(:first-child){
+                margin-right: 10px;
+            }
+        }
+    }
+}
+.section-eight{
+    .container{
+        .data{
+            .details{
+                .more{
+                    div{
+                        .info{
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

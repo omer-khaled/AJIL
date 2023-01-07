@@ -1,0 +1,204 @@
+@use  '../healper/variable' as *;
+.go{
+    width: 134px;
+    height: 46px;
+    background-color: $mainColor;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: 0.6s ease-in-out all; 
+    overflow: hidden;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0;
+        background-color: #0549EB;
+        z-index: -1;
+        transition: 0.6s ease-in-out all; 
+        // transition-timing-function: cubic-bezier();
+        // border-radius: 5px;
+    }
+    &:hover{ 
+        color: white !important;
+        &::before{
+            width: 100%;
+            transition: 0.6s ease-in-out all; 
+        }
+    }
+}
+.nav{
+    list-style: none;
+    flex-grow: 1;
+    margin-left: 10px;
+    li{
+        transition: 0.4s all;
+        cursor: pointer;
+        &:first-child{
+            margin-right: 30px;
+        }
+        // margin-left: 30px;
+        &:hover{
+            color: $mainColor;
+            position: relative;
+            &::before{
+                transition: 0.4s all;
+                position: absolute;
+                content: "";
+                width: 25%;
+                height: 2px;
+                left: 50%;
+                bottom: -5px;
+                transform: translateX(-50%);
+                background-color: $mainColor;
+            }
+        
+        }
+    }
+}
+ul{
+    list-style: none;
+}
+.li-active{
+    color: $mainColor;
+    position: relative;
+    // background-color: red;
+    &::before{
+        position: absolute;
+        content: "";
+        width: 25%;
+        height: 2px;
+        left: 50%;
+        bottom: -5px;
+        transform: translateX(-50%);
+        background-color: $mainColor;
+    }
+
+}
+.heading-list{
+    font-size: 30px;
+    margin-bottom: 42px;
+    position: relative;
+    &::before{
+        transition: 0.4s all;
+        position: absolute;
+        content: "";
+        width: 60%;
+        height: 4px;
+        right: unset;
+        left: 0;
+        bottom: -12px;
+        background-color: #37DEF5;
+    }
+}
+%shared{
+    margin-top:100px;
+    .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: column nowrap;
+        h2{
+            position: relative;
+            margin-bottom: 40px;
+            font: {
+                size : 44px;
+                weight : bold;
+            };
+            &::before{
+                position: absolute;
+                content: "";
+                width: 135px;
+                height: 5px;
+                left: 50%;
+                bottom: -12px;
+                background-color: #37DEF5;
+                transform: translateX(-50%);
+            }
+        }
+        p{
+            color: #292D32;
+            margin: auto;
+            width: 53%;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+    }
+}
+%shard-dott{
+    .dote{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        span{
+            width: 20px;
+            height: 20px;
+            &:not(:first-child){
+                margin-left: 10px;
+            }
+            border-radius: 50%;
+            border: 2px solid $mainColor;
+            &.active{
+                background-color: $mainColor;
+            }
+        }
+    }
+}
+.dotted{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    // background-color: red;
+    padding: 5px;
+    span{
+        width: 5px;
+        height: 5px;
+        background-color: #eee;
+        margin: 0 2px;
+        border-radius: 50%;
+    }
+}
+.close{
+    span{
+        background-color: red !important;
+        top: 50% !important;
+        &:nth-child(1){
+            transform: translate(-50% , -50%) rotate(45deg) !important;
+        }
+        &:nth-child(2){
+            opacity: 0 !important;
+        }
+        &:nth-child(3){
+            transform: translate(-50% , -50%) rotate(-45deg) !important;
+        }
+    }
+}
+*::selection{
+    background-color: #37DEF5;
+    color: white;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #0549EB;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #37DEF5;
+}
